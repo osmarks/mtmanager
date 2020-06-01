@@ -1,0 +1,64 @@
+mono()
+    font-family 'Fira Code', monospace
+
+body
+    mono()
+
+a
+    text-decoration none
+    color blue
+
+input, button
+    border-radius 0
+    border 1px solid black
+    padding 0.5em
+    margin 0.5em
+    mono()
+
+input.link-like
+    appearance none
+    border none
+    margin 0
+    padding 0
+    background none
+    font-size 1em
+    color blue
+    cursor pointer
+
+input.password
+    width 40em
+
+nav
+    margin-bottom 0.5em
+    margin-top 0.5em
+
+nav > *
+    margin-right 1em
+
+nav form
+    display inline-block
+
+.flash
+    border 1px solid black
+    padding 0.5em
+.flash.flerror
+    background salmon
+.flash.flinfo
+    background lightblue
+
+.status-container
+    margin-bottom 0.5em
+    .status
+        padding 0.2em
+        text-transform uppercase
+    .status-running
+        background lime
+    .status-stopped
+        background red
+
+pre.line
+    margin 0
+
+textarea.config
+    width 100%
+    height 100vh

@@ -1,0 +1,26 @@
+extends layout.pug
+
+block content
+    if flags
+        h3.flag
+            each flag in flags
+                +flag_label(flag)
+                span= ` `
+    table.reports
+        tr
+            th RID
+            th Time
+            th Report
+            th Device
+            th Flags
+        each report in reports
+            tr
+                td.id(style=hashbowBG(report.id.toString()))
+                    a(href=url(`/admin/report/${report.id}`))= report.id
+                td.timestamp= renderTimestamp(report.timestamp)
+                td.report= report.report
+                td.device(style=hashbowBG(report.deviceHash))= report.deviceHash
+                td.flags
+                    each flag in report.flags
+                        +flag_label(flag)
+                        span= ` `

@@ -1,0 +1,37 @@
+mixin flag_label(flag)
+    span(style=hashbowBG(flag))
+        a(href=url(`/admin/reports/?${addFlag(flag)}`))= flag
+
+mixin nav_item(u, name)
+    a(href=url(u))= name
+
+doctype html
+
+html
+    head
+        link(rel="stylesheet", href=url("/static/index.css"))
+        block head
+    body
+        h1= path
+        title= `mtmanager ${path}`
+        each message in flash()
+            div(class=`flash fl${message.type}`)= message.message
+        if path !== "/login"
+            nav
+                +nav_item("/", "Index")
+                +nav_item("/config", "Config")
+                +nav_item("/logs", "Logs")
+                +nav_item("/terminal", "Terminal")
+                form.logout(method="POST", action=url(value=serverRunning() ? "/stop" : "/start"))
+                    input.link-like(type="submit", value=serverRunning() ? "Stop" : "Start")
+                form.logout(method="POST", action=url("/logout"))
+                    input.link-like(type="submit", value="Logout")
+            .status-container= `Server is `
+                if serverRunning()
+                    span.status.status-running running
+                else
+                    span.status.status-stopped stopped
+                    - const exitCode = lastExitCode()
+                    if exitCode !== null
+                        span= ` (code ${exitCode})`
+        block content

@@ -1,0 +1,28 @@
+{
+  "name": "mtmanager",
+  "version": "1.0.0",
+  "description": "Lets you manage a Minetest server from your browser.",
+  "main": "index.js",
+  "dependencies": {
+    "cookie-session": "^1.4.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-promise-router": "^3.0.3",
+    "express-ws": "^4.0.0",
+    "node-pty": "^0.9.0",
+    "pug": "^2.0.4",
+    "simple-flash": "^0.1.3",
+    "slice-file": "^1.0.0",
+    "ws": "^7.3.0",
+    "xterm": "^4.6.0"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.2",
+    "stylus": "^0.54.7"
+  },
+  "scripts": {
+    "start": "nodemon index.js",
+    "build:styles": "stylus -o static styles"
+  }
+}

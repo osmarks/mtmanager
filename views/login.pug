@@ -1,0 +1,7 @@
+extends layout.pug
+
+block content
+    h3 Input password
+    form(action=url("/login"), method="POST")
+        input.password(type="password", name="password")
+        input(type="submit", value="Login")

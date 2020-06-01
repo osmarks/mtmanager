@@ -1,0 +1,11 @@
+extends layout.pug
+
+block content
+    h3= `Viewing lines ${sliceStart} to ${sliceEnd || "end"}`
+    a(href=url(`/logs?start=${sliceStart - 100}&end=${sliceStart}`)) ↑ Earlier
+    each line in lines
+        pre.line= line
+    if sliceEnd
+        a(href=url(`/logs?start=${sliceEnd}&end=${sliceEnd + 100}`)) ↓ Later
+        br
+        a(href=url(`/logs`)) ↓↓ End

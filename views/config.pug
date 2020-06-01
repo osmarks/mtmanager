@@ -1,0 +1,7 @@
+extends layout.pug
+
+block content
+    h3 minetest.conf
+    form(method="POST", action=url("/config"))
+        input.link-like(type="submit", value="Save")
+        textarea(name="content").config= content
