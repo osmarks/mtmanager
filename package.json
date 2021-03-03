@@ -10,7 +10,7 @@
     "express-promise-router": "^3.0.3",
     "express-ws": "^4.0.0",
     "node-pty": "^0.9.0",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "simple-flash": "^0.1.3",
     "slice-file": "^1.0.0",
     "ws": "^7.3.0",
